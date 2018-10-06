@@ -2,6 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
+./taskbuster/__pycache__
 
 # C extensions
 *.so
