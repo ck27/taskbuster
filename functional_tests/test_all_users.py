@@ -12,7 +12,7 @@ class NewVisitorTest(unittest.TestCase):
  
     def test_it_worked(self):
         self.browser.get('http://127.0.0.1:8000')
-        self.assertIn('Django Taskbuster', self.browser.title)
+        self.assertIn('Django TaskBuster', self.browser.title)
  
 if __name__ == '__main__':
     unittest.main(warnings='ignore')

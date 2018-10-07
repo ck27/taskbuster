@@ -16,9 +16,15 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
 
     def test_home_title(self):
         self.browser.get(self.get_full_url("home"))
-        self.assertIn("Taskbuster", self.browser.title)
+        self.assertIn("TaskBuster", self.browser.title)
 
     def test_h1_css(self):
         self.browser.get(self.get_full_url("home"))
         header = self.browser.find_element_by_id("header")
         self.assertEqual(header.value_of_css_property("background-color"),"rgba(0, 0, 0, 1)")
+
+    def test_home_files(self):
+        self.browser.get(self.live_server_url+"/robots.txt")
+        self.assertNotIn("Not Found",self.browser.title)
+        self.browser.get(self.live_server_url+"/humans.txt")
+        self.assertNotIn("Not Found",self.browser.title)
